@@ -9,7 +9,210 @@
   },
   hexoVersion: '5.2.0'
 } </script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Mikochi's blog" type="application/atom+xml">
-</head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="false"><div class="author-info"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Mikochi</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">3</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">2</span></a></div></div></div><nav id="nav" style="background-image: url(https://cdn.luogu.com.cn/upload/image_hosting/292emy1t.png)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Mikochi's blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right"></span></div><div id="site-info"><div id="site-title">Mikochi's blog</div><div id="site-sub-title">Welcome~</div></div></nav><div id="content-outer"><div class="layout" id="content-inner"><div class="recent-post-item article-container"><a class="article-title" href="/2020/11/21/hello-world-1/">前言</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-11-21</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/">日常生活</a></span><div class="content"><p>​    这是一篇奇怪的前言。</p>
+</head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="false"><div class="author-info"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Mikochi</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">4</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">2</span></a></div></div></div><nav id="nav" style="background-image: url(https://cdn.luogu.com.cn/upload/image_hosting/292emy1t.png)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Mikochi's blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right"></span></div><div id="site-info"><div id="site-title">Mikochi's blog</div><div id="site-sub-title">Welcome~</div></div></nav><div id="content-outer"><div class="layout" id="content-inner"><div class="recent-post-item article-container"><a class="article-title" href="/2020/11/24/linearmath-think3/">线性代数-行列式-思考题</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-11-24</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span><div class="content"><h3 id="1、计算以下行列式"><a href="#1、计算以下行列式" class="headerlink" title="1、计算以下行列式"></a>1、计算以下行列式</h3><script type="math/tex; mode=display">
+\begin{vmatrix}
+k&\lambda&\lambda&\cdots&\lambda\\
+\lambda&k&\lambda&\cdots&\lambda\\
+\vdots&\vdots&\vdots&&\vdots\\
+\lambda&\lambda&\lambda&\cdots&k\\
+\end{vmatrix}_{n\times n}</script><p>解：</p>
+<p>把相邻两行相减，得到等价行列式矩阵后对第一行展开：</p>
+<script type="math/tex; mode=display">
+\begin{vmatrix}
+k&\lambda&\lambda&\cdots&\lambda\\
+\lambda-k&k-\lambda&0&\cdots&0\\
+\vdots&\vdots&\vdots&&\vdots\\
+0&0&0&\cdots&k-\lambda\\
+\end{vmatrix}_{n\times n}\\\
+=k\cdot
+\begin{vmatrix}
+k-\lambda&0&\cdots&0\\
+\lambda-k&k-\lambda&\cdots&0\\
+\vdots&\vdots&&\vdots\\
+0&0&\cdots&k-\lambda\\
+\end{vmatrix}_{(n-1)\times(n-1)}\\
++
+(n-1)\lambda\cdot
+\begin{vmatrix}
+\lambda-k&0&\cdots&0\\
+\lambda-k&k-\lambda&\cdots&0\\
+\vdots&\vdots&&\vdots\\
+0&0&\cdots&k-\lambda\\
+\end{vmatrix}_{(n-1)\times(n-1)}\\
+=[k-(n-1)\lambda]</script><p>//？</p>
+<h3 id="2、证明范德蒙行列式"><a href="#2、证明范德蒙行列式" class="headerlink" title="2、证明范德蒙行列式"></a>2、证明范德蒙行列式</h3><script type="math/tex; mode=display">
+\begin{vmatrix}
+1&1&1&\cdots&1\\
+a_1&a_2&a_3&\cdots&a_n\\
+a_1^2&a_2^2&a_3^2&\cdots&a_n^2\\
+\vdots&\vdots&\vdots&&\vdots\\
+a_1^{n-2}&a_2^{n-2}&a_3^{n-2}&\cdots&a_n^{n-2}\\
+a_1^{n-1}&a_2^{n-1}&a_3^{n-1}&\cdots&a_n^{n-1}\\
+\end{vmatrix}
+=\prod_{1\leq j<i\leq n}(a_i-a_j)</script><p>证明：</p>
+<p>我们将$row_i-a_1row_{i-1}$，得</p>
+<script type="math/tex; mode=display">
+\begin{vmatrix}
+1&1&1&\dots&1\\
+0&a_2-a_1&a_3-a_1&\cdots&a_n-a_1\\
+0&a_2(a_2-a_1)&a_3(a_3-a_1)&\cdots&a_n(a_n-a_1)\\
+\vdots&\vdots&\vdots&&\vdots\\
+0&a_2^{n-2}(a_2-a_1)&a_3^{n-2}(a_3-a_1)&\cdots&a_n^{n-2}(a_n-a_1)\\
+\end{vmatrix}_{n\times n}</script><p>对第一列进行展开，再提取每列公因式得</p>
+<script type="math/tex; mode=display">
+detA=
+1\cdot
+\begin{vmatrix}
+a_2-a_1&a_3-a_1&\cdots&a_n-a_1\\
+a_2(a_2-a_1)&a_3(a_3-a_1)&\cdots&a_n(a_n-a_1)\\
+\vdots&\vdots&&\vdots\\
+a_2^{n-2}(a_2-a_1)&a_3^{n-2}(a_3-a_1)&\cdots&a_n^{n-2}(a_n-a_1)\\
+\end{vmatrix}_{(n-1)\times(n-1)}\\
+=(a_2-a_1)(a_3-a_1)\cdots(a_n-a_1)
+\begin{vmatrix}
+1&1&\cdots&1\\
+a_2&a_3&\cdots&a_n\\
+\vdots&\vdots&&\vdots\\
+a_2^{n-2}&a_3^{n-2}&\cdots&a_n^{n-2}
+\end{vmatrix}_{(n-1)\times(n-1)}</script><p>继续展开得$detA=\prod_{1\leq j&lt;i\leq n}(a_i-a_j)$，证毕</p>
+<p>更加严谨需要用数学归纳法。</p>
+<h3 id="3、计算-n-阶行列式"><a href="#3、计算-n-阶行列式" class="headerlink" title="3、计算$n$阶行列式"></a>3、计算$n$阶行列式</h3><script type="math/tex; mode=display">
+D_n=
+\begin{vmatrix}
+a+b&ab&0&0&\cdots&0&0\\
+1&a+b&ab&0&\cdots&0&0\\
+0&1&a+b&ab&\cdots&0&0\\
+\vdots&\vdots&\vdots&\vdots&&\vdots&\vdots\\
+0&0&0&0&\cdots&1&a+b\\
+\end{vmatrix}_{n\times n},其中(a\neq b)</script><p>解：</p>
+<p>对第一列展开，后对第二列展开得</p>
+<script type="math/tex; mode=display">
+D_n=(a+b)
+\begin{vmatrix}
+a+b&ab&0&\cdots&0&0\\
+1&a+b&ab&\cdots&0&0\\
+\vdots&\vdots&\vdots&&\vdots&\vdots\\
+0&0&0&\cdots&1&a+b\\
+\end{vmatrix}_{(n-1)\times(n-1)}-
+1\cdot
+\begin{vmatrix}
+ab&0&0&\cdots&0&0\\
+1&a+b&ab&\cdots&0&0\\
+\vdots&\vdots&\vdots&&\vdots&\vdots\\
+0&0&0&\cdots&1&a+b\\
+\end{vmatrix}_{(n-1)\times(n-1)}\\
+=(a+b)
+\begin{vmatrix}
+a+b&ab&0&\cdots&0&0\\
+1&a+b&ab&\cdots&0&0\\
+\vdots&\vdots&\vdots&&\vdots&\vdots\\
+0&0&0&\cdots&1&a+b\\
+\end{vmatrix}_{(n-1)\times(n-1)}-
+ab\cdot
+\begin{vmatrix}
+a+b&ab&0&\cdots&0&0\\
+1&a+b&ab&\cdots&0&0\\
+\vdots&\vdots&\vdots&&\vdots&\vdots\\
+0&0&0&\cdots&1&a+b\\
+\end{vmatrix}_{(n-2)\times(n-2)}\\</script><p>故$D_n=(a+b)D_{n-1}-abD_{n-2}$</p>
+<p>则$D_n-aD_{n-1}=b(D_{n-1}-aD_{n-2})$，可得$D_n=aD_{n-1}+ b^n,D_2=a^2+ab+b^2,D_1=a+b$。</p>
+<p>由$a、b$等价，可得</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+D_n=aD_{n-1}+b^n\\
+D_n=bD_{n-1}+a^n\\
+\end{cases}\\
+\Rightarrow
+(b-a)D_n=b^{n+1}-a^{n+1}\\
+\Rightarrow
+D_n=\frac{b^{n+1}-a^{n+1}}{b-a}\\
+\Rightarrow
+D_n=a^n+a^{n-1}b+a^{n-2}b^2+\cdots+ab^{n-1}+b^n
+=\sum_{k=0}^na^kb^{n-k}\\</script><h3 id="4、计算三角分块矩阵行列式"><a href="#4、计算三角分块矩阵行列式" class="headerlink" title="4、计算三角分块矩阵行列式"></a>4、计算三角分块矩阵行列式</h3><p>设$A$、$B$、$C$都是数域$K$上的$n$阶矩阵，证明：</p>
+<script type="math/tex; mode=display">
+\begin{vmatrix}
+A&0\\B&C\\
+\end{vmatrix}=
+\begin{vmatrix}A\end{vmatrix}
+\begin{vmatrix}C\end{vmatrix}</script><p>我们考虑将$A$转化为下三角矩阵，即令$E_p\cdots E_2E_1A=U,L=E_1^{-1}E_2^{-1}\cdots E_p^{-1}$，其中$U$为下三角矩阵，$L$为初等行变换的逆变换。</p>
+<script type="math/tex; mode=display">
+\left[
+\begin{matrix}
+L&0\\0&I
+\end{matrix}
+\right]\times
+\left[
+\begin{matrix}
+U&0\\B&C\\
+\end{matrix}
+\right]=
+\left[
+\begin{matrix}
+A&0\\B&C\\
+\end{matrix}
+\right]</script><p>对于第二个矩阵，我们将其按照$U​$对角线依次展开，可以得到$<br>\begin{vmatrix}U&amp;0\\B&amp;C\\\end{vmatrix}=u_1u_2\cdots u_n\begin{vmatrix}C\end{vmatrix}=\begin{vmatrix}U\end{vmatrix}\begin{vmatrix}C\end{vmatrix}​$，则</p>
+<script type="math/tex; mode=display">
+\begin{vmatrix}
+A&0\\B&C\\
+\end{vmatrix}=\begin{vmatrix}L\end{vmatrix}\begin{vmatrix}I\end{vmatrix}\begin{vmatrix}U\end{vmatrix}\begin{vmatrix}C\end{vmatrix}=
+\begin{vmatrix}A\end{vmatrix}\begin{vmatrix}C\end{vmatrix}</script><p>同理，对于$\begin{vmatrix}A&amp;B\\0&amp;C\\\end{vmatrix}=\begin{vmatrix}A\end{vmatrix}\begin{vmatrix}C\end{vmatrix}$</p>
+<h3 id="5、计算分块矩阵行列式"><a href="#5、计算分块矩阵行列式" class="headerlink" title="5、计算分块矩阵行列式"></a>5、计算分块矩阵行列式</h3><p>设$A$、$B$、$C$、$D$都是数域$K$上的$n$阶矩阵，且$AC=CA$，证明：</p>
+<script type="math/tex; mode=display">
+\begin{vmatrix}
+A&B\\C&D
+\end{vmatrix}=
+\begin{vmatrix}
+AD-CB
+\end{vmatrix}</script><p>证明：</p>
+<p>我们考虑初等行变换将矩阵转化为三角矩阵</p>
+<p>当$A​$可逆时，</p>
+<script type="math/tex; mode=display">
+\left[
+\begin{matrix}
+A&B\\C&D\\
+\end{matrix}
+\right]
+-[row_2+(-CA^{-1})row_1]\rightarrow
+\left[
+\begin{matrix}
+A&B\\C-CA^{-1}A&D-CA^{-1}B\\
+\end{matrix}
+\right]
+\rightarrow
+\left[
+\begin{matrix}
+A&B\\0&D-CA^{-1}B\\
+\end{matrix}
+\right],\\
+则
+\left[
+\begin{matrix}
+I&0\\-CA^{-1}&I
+\end{matrix}
+\right]\times
+\left[
+\begin{matrix}
+A&B\\C&D\\
+\end{matrix}
+\right]=
+\left[
+\begin{matrix}
+A&B\\0&D-CA^{-1}B\\
+\end{matrix}
+\right],\\
+则
+\begin{vmatrix}I\end{vmatrix}
+\begin{vmatrix}I\end{vmatrix}
+\begin{vmatrix}A&B\\C&D\\\end{vmatrix}=
+\begin{vmatrix}A\end{vmatrix}
+\begin{vmatrix}D-CA^{-1}B\end{vmatrix},\\
+则
+\begin{vmatrix}A&B\\C&D\\\end{vmatrix}=
+\begin{vmatrix}A(D-CA^{-1}B)\end{vmatrix}=
+\begin{vmatrix}AD-ACA^{-1}B\end{vmatrix}=
+\begin{vmatrix}AD-CAA^{-1}B\end{vmatrix}=
+\begin{vmatrix}AD-CB\end{vmatrix}\\</script><p>ps.分块矩阵行变换——行变换左乘、列变换右乘</p>
+</div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2020/11/21/hello-world-1/">前言</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-11-21</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/">日常生活</a></span><div class="content"><p>​    这是一篇奇怪的前言。</p>
 <p>​    首先热烈庆祝我的博客开通了！啪啪啪~（掌声）</p>
 <p>​    这个博客是基于github和hexo搭建的，用的是melody主题，毕竟我这小白什么都不懂，只是想找一个地方写博客，发现都不是很理想，就尝试性地搭了一个博客。虽然现在还不是很完善，但是我也在尽力地学习怎么把它搭得更好看了……</p>
 <p>​    那我就在这里说一说这个博客的搭建历程吧。</p>
@@ -67,7 +270,7 @@ a_{11}&a_{12}&a_{13}\\
 <script type="math/tex; mode=display">
 \Delta=a_{11}\cdot\begin{vmatrix}a_{22}&a_{23}\\a_{32}&a_{33}\\\end{vmatrix}+
 a_{12}\cdot\begin{vmatrix}a_{21}&a_{23}\\a_{31}&a_{33}\\\end{vmatrix}+
-a_{13}\cdot\begin{vmatrix}a_{21}&a_{22}\\a_{31}&a_{32}\\\end{vmatrix}\tag{2}</script><p>我们可以看到，$\Delta$的这个形式，包含了许多特性。首先，他将$3$阶行列式写成了$2$阶行列式的和，这让我们自然而然地产生一种思路——是否高阶行列式可以由低阶行列式表示？这也就形成了我们的基础思路，也就是标题所说的“循环定义”；其次，我们发现我们取出的$a_{11}$、$a_{12}$、$a_{13}$，全都在同一行。我们将这个取出方式成为“对第$1$行进行展开”；最后，我们考虑每一项的$a$的下标，对于$a_{ij}$，它所对应的行列式矩阵不包含第$i$行第$j$列。</p>
+a_{13}\cdot\begin{vmatrix}a_{21}&a_{22}\\a_{31}&a_{32}\\\end{vmatrix}\tag{2}</script><p>我们可以看到，$\Delta$的这个形式，包含了许多特性。首先，他将$3$阶行列式写成了$2$阶行列式的和，这让我们自然而然地产生一种思路——是否高阶行列式可以由低阶行列式表示？这也就形成了我们的基础思路，也就是标题所说的“循环定义”；其次，我们发现我们取出的$a_{11}$、$a_{12}$、$a_{13}$，全都在同一行。我们将这个取出方式成为“对第$1$行进行展开”；最后，我们考虑每一项的$a$的下标，对于$a_{ij}$，它所对应的行列式矩阵不包含第$i$行第$j​$列。</p>
 <p>对于最后一个性质，我们意识到这是寻找高阶行列式对应低阶行列式的重要形式。在下面我们按照这条性质对$A$向更高阶进行拓展。</p>
 <p>对于$n$阶方阵$A$，我们称$A_{i,j}$为$A$去除$i$行$j$列后的$n-1$阶子矩阵；</p>
 <p>同时我们对于$A_{i,j}$，令$C_{i,j}=(-1)^{i+j}det A_{i,j}$，并把$C_{i,j}$称为余因子。</p>
@@ -80,8 +283,11 @@ detA=a_{11}detA_{11}-a_{12}detA_{12}+\dots+(-1)^{1+n}a_{1n}detA_{1n}\\
 <p>事实上，我们有</p>
 <script type="math/tex; mode=display">
 detA=\sum_{i=1}^na_{i1}C_{i1}</script><p>我们能看到对于行展开与列展开的行列式表达式有着非常对称的相似性，甚至说对于同一个式子，行展开与列展开仅仅只是枚举量的选择不同罢了。</p>
-<p>我们不禁继续产生联想——对于行展开与列展开，都是只对当前矩阵的第$1​$行与第$1​$列进行的，那么我们是否能够选择任意一行或任意一列进行展开呢——换句话说，在行列式意义上，我们是否能够证明$a​$的行列位置是等价的呢?</p>
-<p>事实上并没有想象的那么美好，但是我们在后文会继续讨论相关问题，给出行列式意义下的位置的相关性探讨。</p>
+<p>我们不禁继续产生联想——对于行展开与列展开，都是只对当前矩阵的第$1$行与第$1$列进行的，那么我们是否能够选择任意一行或任意一列进行展开呢——换句话说，在行列式意义上，我们是否能够证明$a$的行列位置是等价的呢?</p>
+<p>即</p>
+<script type="math/tex; mode=display">
+detA=\sum_{j=1}^na_{pj}C_{pj}=\sum_{i=1}^na_{iq}C_{iq}</script><p>事实上，对于$a_{ij}$，其实只有$(-1)^{i+j}$取决于它的位置，而无论对于每一个行或列展开，始终有相同的$(-1)^{i+j}$稳定着它所在位置的贡献，即我们对于任意行或列展开，所得到的行列式都是相等的。</p>
+<p>我们在后文会继续讨论相关问题，给出行列式意义下的位置的相关性探讨。</p>
 <h3 id="展开定义"><a href="#展开定义" class="headerlink" title="展开定义"></a>展开定义</h3><p>展开定义是相对于循环定义所说的。由于循环过程中用到了低一阶的行列式，使其看上去比较简单，但是始终让人难以释怀。毕竟这意味着当我要计算一个行列式的时候，需要进一步展开$n$个低阶行列式，然后对于低阶行列式，还要进一步展开……</p>
 <p>正因此，我们希望直接展开到最后，得到一个更加直观的式子——也就是我们所说的展开定义。</p>
 <p>我们可以观察$(1)$式，对于$\Delta$的取值，我们可以看到它是由若干包含$n$个$a$的项构成的，也就是有若干个$n$次项。而对于每一项，我们可以从$a$下标观察出，每一项的行下标与列下标分别刚好覆盖$[1,n]$，而各项之间所选择的$a$互不相同。</p>
@@ -192,9 +398,9 @@ k\sum_p (-1)^{f(p)} a_{1p_1}a_{2p_2}\dots a_{vp_u}\dots a_{np_n}=0\\
 <p>对于$(c)$，显然对于$row_i\rightarrow krow_i$，有$\forall p,a_{i,p_i}\rightarrow ka_{i,p_i}$，故$detA\rightarrow kdetA$。</p>
 <h4 id="对定义中一些问题的回顾"><a href="#对定义中一些问题的回顾" class="headerlink" title="对定义中一些问题的回顾"></a>对定义中一些问题的回顾</h4><p>我们在循环定义中提出过一个猜想——行列式下$a$是否位置等价？通过上述初等行变换性质的证明，我们可以看到单单着眼于某一个$a_{ij}$，它其实可以通过行/列交换到达矩阵的任意一个位置，付出的代价仅仅是正负号的改变。甚至于当$a_{ij}$移动到异行异列时，符号的变化会抵消，使得其移动保持行列式的不变。</p>
 <p>但是我们不能仅仅从一个$a_{ij}$上思考问题，交换两行/两列的过程中其实伴随着$a_{ij}$之外的矩阵元素的变化，正如$a_{ij}$连续进行两次行交换，并不等价于它直接交换到最终那一行，因为另外两行之间的位置也发生了改变。</p>
-<p>既然行交换没有任意性，就意味着有什么隐藏的规律对它进行着限制——也就是行交换过程中有某些事物始终不变。显然，这就是某行某列内部的联系。对于$a_{ij}$，与它同一行的必然是那些从一开始就一直同行的元素，它们之间的相对位置可能会发生改变，但绝对不会出现某个元素窜到了其他行的情况。这就保证了某行内部联系的基本条件。</p>
+<p>既然行交换没有任意性，就意味着有什么隐藏的规律对它进行着限制——也就是行交换过程中有某些事物始终不变。显然，这就是某行某列内部的联系。对于$a_{ij}​$，与它同一行的必然是那些从一开始就一直同行的元素，它们之间的相对位置可能会发生改变，但绝对不会出现某个元素窜到了其他行的情况。这就保证了某行内部联系的基本条件。</p>
 <p>对于行内部元素的相对位置也有一些联系。行与行之间某两个同列的相对位置从一开始确定了，它们一直保持同列——这意味着行与行之间是协调的，它们保持着某种默契，使得无论是行交换、列交换、行倍加等都不能影响它们之间的相互关系。</p>
-<p>它们之间保持着什么关系？可能就是我们所说的线性相关关系，但可能还是我们还没有接触到的某些更深的性质。正因此，我们不能轻举妄动地就决定对某一行进行行列式展开，而是要遵守规定，按照第$1$行展开，或者进行行交换。</p>
+<p>它们之间保持着什么关系？可能就是我们所说的线性相关关系，但可能还是我们还没有接触到的某些更深的性质。</p>
 <p>另外，在展开定义中我们思考为什么逆序对数决定了其项的附加正负符号。这在学习了行、列交换对行列式的作用后就很容易解答了。</p>
 <p>我们考虑将$a_{11}a_{22}\dots a_{nn}$设为初始项，那么对于进行列交换的过程，其实就是创造逆序对的过程，而对应到行列式上，自然也就是$detA\rightarrow -detA$——这很合理。</p>
 <p>当然这种思路并不严谨，事实上，逆序对数的来源其实是从构造行列式时的需求中来的——之前我们在“反对称线性函数定义”中提到行列式是唯一满足某种需求的反对称线性函数，而反对称函数就要求交换两个有序元素的同时，对应函数值变为原来的相反数。据此我们才有引入逆序对数的概念。</p>
@@ -204,7 +410,9 @@ k\sum_p (-1)^{f(p)} a_{1p_1}a_{2p_2}\dots a_{vp_u}\dots a_{np_n}=0\\
 <p>我们我们考虑2阶矩阵在平面空间中的表现，矩阵的列向量构成了一个平行四边形，而行列式就是该平行四边形的有向面积。</p>
 <p>对于$(c)$，其实就是对四边形的某条边延长到它的$k$倍，那么其对应面积就变为原来的$k$倍。</p>
 <p>对于$(b)$，也就是交换平行四边形的两条基本向量边，那么它的有向面积反向——这和之前所说的“右手法则”的变化相对应。</p>
-<p>对于$(a)$，考虑某个向量加上另一个向量的几倍，相当于往那个向量的方向上移动。由于这种移动是平行的，平行四边形的底和高都不会发生改变，自然面积也没有发生改变。</p>
+<p>对于$(a)​$，考虑某个向量加上另一个向量的几倍，相当于往那个向量的方向上移动。由于这种移动是平行的，平行四边形的底和高都不会发生改变，自然面积也没有发生改变。</p>
+<p>而当我们关注几何变换意义下的行列式，也就是伸缩因子时，其实很难探究具体每个行变换对于伸缩因子的影响意义。为了方便，我们还是考虑对于旋转矩阵$T=\left[\begin{matrix}cos\theta &amp; -sin\theta\\sin\theta&amp;cos\theta\end{matrix}\right]$进行初等变换，关注$A=\left[\begin{matrix}\rho_1cos\theta_1 &amp; \rho_2cos\theta_2\\\rho_1sin\theta_1&amp;\rho_2sin\theta_2\end{matrix}\right]$。</p>
+<p>对于$(c)​$，当$row_2\rightarrow krow_2​$，则$TA=\left[\begin{matrix}\rho_1cos(\theta_1+\theta) &amp; -sin\theta\\\rho_1sin(\theta_1+\theta) &amp;cos\theta\end{matrix}\right]​$</p>
 </div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2020/10/31/hello-world/">Hello World</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-31</time><div class="content"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 </p>
